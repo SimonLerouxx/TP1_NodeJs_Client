@@ -5,6 +5,13 @@
     scroll-snap-align: start;
 }
 
+
+.contact {
+    padding: 8px;
+    padding-bottom: 0px;
+    scroll-snap-align: start;
+}
+
 .contactContainer {
     display: grid;
     grid-template-columns: 4fr 1fr;

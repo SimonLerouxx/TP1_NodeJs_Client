@@ -18,14 +18,7 @@ function Init_UI() {
     $('#allCatCmd').on("click", function () {
         renderContacts();
     });
-    $('#saveContact').on("click", function () {
-        renderListCategorie();
-    });
 
-    
-
-
-    
 
 }
 
@@ -217,8 +210,10 @@ async function renderDeleteContactForm(id) {
         $('#deleteContact').on("click", async function () {
             showWaitingGif();
             let result = await Contacts_API.Delete(contact.Id);
-            if (result)
+            if (result){
                 renderContacts();
+                location.reload();
+            }
             else
                 renderError("Une erreur est survenue!");
         });
@@ -302,6 +297,7 @@ function renderContactForm(contact = null) {
         let result = await Contacts_API.Save(contact, create);
         if (result){
             renderContacts();
+            location.reload();
         }
             
         else
@@ -324,7 +320,7 @@ function getFormData($form) {
 function renderContact(contact) {
     return $(`
     
-     <div class="contactRow" contact_id=${contact.Id}">
+     <div class="contact" contact_id=${contact.Id}">
      
         <div class="contactContainer noselect">
             <div class="contactLayout">
@@ -334,7 +330,7 @@ function renderContact(contact) {
                 </div>
                 <span class="contactName">${contact.Titre}</span>
                 
-                <span class="contactEmail">${contact.Categorie}</span>
+                <span class="contactEmail"><a href="${contact.Url}">${contact.Categorie}</a></span>
             </div>
             <div class="contactCommandPanel">
                 <span class="editCmd cmdIcon fa fa-pencil" editContactId="${contact.Id}" title="Modifier ${contact.Titre}"></span>
