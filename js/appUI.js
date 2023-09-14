@@ -330,7 +330,8 @@ function renderContact(contact) {
                 </div>
                 <span class="contactName">${contact.Titre}</span>
                 
-                <span class="contactEmail"><a href="${contact.Url}">${contact.Categorie}</a></span>
+                <span class="contactEmail">${contact.Categorie}</span>
+                <span class="contactEmail"><a href="${contact.Url}">Lien</a></span>
             </div>
             <div class="contactCommandPanel">
                 <span class="editCmd cmdIcon fa fa-pencil" editContactId="${contact.Id}" title="Modifier ${contact.Titre}"></span>
