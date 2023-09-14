@@ -1,7 +1,7 @@
 class Contacts_API {
     static API_URL() { 
-        return "https://exuberant-basalt-sauroposeidon.glitch.me/api/contacts";
-        //return "http://localhost:5000/api/contacts" 
+        //return "https://exuberant-basalt-sauroposeidon.glitch.me/api/contacts";
+        return "http://localhost:5000/api/contacts" 
     };
     static async Get(id = null) {
         return new Promise(resolve => {

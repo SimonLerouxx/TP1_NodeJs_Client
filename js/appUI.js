@@ -18,6 +18,10 @@ function Init_UI() {
     $('#allCatCmd').on("click", function () {
         renderContacts();
     });
+    $('#saveContact').on("click", function () {
+        renderListCategorie();
+    });
+
     
 
 
@@ -199,7 +203,7 @@ async function renderDeleteContactForm(id) {
                     <div class="big-favicon"
                     style="background-image: url('http://www.google.com/s2/favicons?sz=64&domain=${contact.Url}/');">
                     
-                </div>
+                    </div>
                         <div class="contactName">${contact.Titre}</div>
                         <div class="contactEmail">${contact.Categorie}</div>
                     </div>
